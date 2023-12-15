@@ -22,6 +22,10 @@ const userSlice = createSlice({
       state.error = action.payload;
       state.loading = false;
     },
+    setUser: (state, action) => {
+      state.currentUser = action.payload.currentUser;//imp
+      state.isVendor = action.payload.isVendor;
+    },
     updateUserStart: (state) => {
       state.loading = true;
     },
@@ -77,3 +81,4 @@ export const {
 } = userSlice.actions;
 
 export default userSlice.reducer;
+export const { setUser } = userSlice.actions;

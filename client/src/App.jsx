@@ -10,6 +10,11 @@ import Header from "./components/Header";
 import PrivateRoute from "./components/PrivateRoute";
 import CreateListing from "./pages/CreateListing";
 import UpdateListing from "./pages/UpdateListing";
+import Footer from "./components/Footer";
+import VendorSignIn from "./pages/VendorSignIn";
+import VendorSignUp from "./pages/VendorSignUp";
+import VendorHomePage from "./pages/VendorHomePage";
+import UserHomePage from "./pages/UserHomePage";
 
 const App = () => {
   return (
@@ -20,12 +25,17 @@ const App = () => {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/about" element={<About />} />
-        <Route element={<PrivateRoute />}>
+        <Route path="/vendor-sign-in" element={<VendorSignIn />} />
+        <Route path="/vendor-sign-up" element={<VendorSignUp />} />
+        <Route path="/vendor-home" element={<VendorHomePage/>}/>
+        <Route path="/user-home-page" element={<UserHomePage/>}/>
+         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-listing" element={<CreateListing />} />
           <Route path="/update-listing/:listingId" element={<UpdateListing/>} />
         </Route>
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 };

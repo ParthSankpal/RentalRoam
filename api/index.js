@@ -10,7 +10,10 @@ import authRouter from './routes/auth.route.js';
 
 import listingRouter from './routes/listing.route.js';
 
+import triprequest from './routes/triprequest.route.js';
+
 import cookieParser from 'cookie-parser';
+
 
 mongoose.connect(process.env.MONGODB).then(()=>{
         console.log("CONNECTED TO MONGODB");
@@ -35,6 +38,7 @@ app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 
 app.use('/api/listing', listingRouter);
+app.use('/api/triprequest', triprequest);
 
 app.use((err, req, res, next)=>{
     const statusCode = res.statusCode || 500;
